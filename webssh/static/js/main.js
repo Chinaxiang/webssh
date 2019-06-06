@@ -274,7 +274,8 @@ jQuery(function($){
         term = new window.Terminal({
           cursorBlink: true,
           theme: {
-            background: url_opts_data.bgcolor || 'black'
+            background: url_opts_data.bgcolor || 'black',
+            foreground: 'orange'
           }
         });
 

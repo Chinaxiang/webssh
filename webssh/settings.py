@@ -19,11 +19,12 @@ def print_version(flag):
 
 define('address', default='0.0.0.0', help='Listen address')
 define('port', type=int, default=8888,  help='Listen port')
+define('ctx', default='',  help='Root path')
 define('ssladdress', default='0.0.0.0', help='SSL listen address')
 define('sslport', type=int, default=4433,  help='SSL listen port')
 define('certfile', default='', help='SSL certificate file')
 define('keyfile', default='', help='SSL private key file')
-define('debug', type=bool, default=False, help='Debug mode')
+define('debug', type=bool, default=True, help='Debug mode')
 define('policy', default='warning',
        help='Missing host key policy, reject|autoadd|warning')
 define('hostfile', default='', help='User defined host keys file')
@@ -33,8 +34,8 @@ define('redirect', type=bool, default=True, help='Redirecting http to https')
 define('fbidhttp', type=bool, default=True,
        help='Forbid public plain http incoming requests')
 define('xheaders', type=bool, default=True, help='Support xheaders')
-define('xsrf', type=bool, default=True, help='CSRF protection')
-define('origin', default='same', help='''Origin policy,
+define('xsrf', type=bool, default=False, help='CSRF protection')
+define('origin', default='*', help='''Origin policy,
 'same': same origin policy, matches host name and port number;
 'primary': primary domain policy, matches primary domain only;
 '<domains>': custom domains policy, matches any domain in the <domains> list
